@@ -14,6 +14,8 @@ public interface TaskDao {
     @Query("SELECT * FROM task")
     List<Task> getAll();
 
+    @Query("SELECT * FROM task WHERE task LIKE :searchQuery")
+    public List<Task> searchTask(String searchQuery);
 
     @Insert
     void insert(Task task);
